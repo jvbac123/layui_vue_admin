@@ -17,7 +17,7 @@
     </ul>
     <ul class="layui-nav right">
       <li class="layui-nav-item">
-        <a href="javascript:">admin</a>
+        <a href="#">admin</a>
         <dl class="layui-nav-child"> <!-- 二级菜单 -->
           <dd><a @click="show('个人信息')">个人信息</a></dd>
           <dd><a @click="show('切换帐号')">切换帐号</a></dd>

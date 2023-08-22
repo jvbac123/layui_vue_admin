@@ -1,27 +1,23 @@
 <template>
-  <div class="left-nav">
-<!--    TODO 重做-->
-    <div id="side-nav">
-
-      <ul id="nav">
-        <li v-for="nav of navList">
-          <a @click="open(nav)">
-            <i class="iconfont" v-html='"&#"+nav.icon+";"'></i>
-            <cite>{{nav.name}}</cite>
-            <i class="iconfont nav_right" v-html="nav.show ? icon.more_unfold:icon.more"></i>
+  <!--    TODO 重做-->
+  <lay-menu>
+    <lay-menu-item v-for="nav of navList">
+<!--      <a @click="open(nav)">
+        <i class="iconfont" v-html='"&#"+nav.icon+";"'></i>
+        <cite>{{nav.name}}</cite>
+        <i class="iconfont nav_right" v-html="nav.show ? icon.more_unfold:icon.more"></i>
+      </a>
+      <ul class="sub-menu" v-show="nav.show">
+        <li v-for="menu of nav.subMenu">
+          <a @click="openlink(menu)">
+            <i class="iconfont" v-html='"&#"+menu.icon+";"'></i>
+            <cite>{{menu.name}}</cite>
           </a>
-          <ul class="sub-menu" v-show="nav.show">
-            <li v-for="menu of nav.subMenu">
-              <a @click="openlink(menu)">
-                <i class="iconfont" v-html='"&#"+menu.icon+";"'></i>
-                <cite>{{menu.name}}</cite>
-              </a>
-            </li>
-          </ul>
         </li>
-      </ul>
-    </div>
-  </div>
+      </ul>-->
+     ebs
+    </lay-menu-item>
+  </lay-menu>
 </template>
 <script setup>
 import {ref} from "vue";
@@ -128,10 +124,10 @@ const openlink=obj=>{
     */
 </script>
 <style scoped>
-.left-nav{
+/*.left-nav{
   position: absolute;
   top: 46px;
-  /*TODO*/
+  !*TODO*!
   bottom:1px;
   left: 0;
   z-index: 2;
@@ -151,7 +147,7 @@ const openlink=obj=>{
   border-bottom: 1px solid #e5e5e5;
 }
 .left-nav #nav li:hover > a{
-  /*color: blue;*/
+  !*color: blue;*!
 }
 .left-nav #nav .current{
   background-color: rgba(0, 0, 0, 0.3);
@@ -169,14 +165,14 @@ const openlink=obj=>{
   display: block;
 }
 .left-nav #nav li .opened:hover{
-  /*background: #fff url() 0 0 no-repeat;*/
+  !*background: #fff url() 0 0 no-repeat;*!
 }
 .left-nav #nav li .opened .current{
 
 }
 .left-nav #nav li .sub-menu li:hover{
-  /*color: blue;*/
-  /*background: #fff url() 0 0 no-repeat;*/
+  !*color: blue;*!
+  !*background: #fff url() 0 0 no-repeat;*!
 }
 .left-nav #nav li .sub-menu li a{
   padding: 12px 15px 12px 30px;
@@ -203,5 +199,5 @@ const openlink=obj=>{
 .layui-nav .layui-nav-item a{
   color: #fff;
   cursor: pointer;
-}
+}*/
 </style>
