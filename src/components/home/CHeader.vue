@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="logo"><a href="/">LayUI-Vue-Admin</a></div>
+    <div class="logo"><a href="/public">LayUI-Vue-Admin</a></div>
     <div class="left_open">
       <i title="展开左侧栏" class="iconfont">&#xe699;</i>
     </div>
@@ -24,7 +24,7 @@
           <dd><a href="./login.html">退出</a></dd>
         </dl>
       </li>
-      <li class="layui-nav-item to-index"><a href="/">前台首页</a></li>
+      <li class="layui-nav-item to-index"><a href="/public">前台首页</a></li>
     </ul>
   </div>
 </template>
@@ -33,7 +33,7 @@
 const show=(str)=>{
   console.log(str)
 }
- import('../assets/style/xadmin.css')
+ import('../../assets/style/xadmin.css')
 // import('../assets/iconfont/font.css')
 </script>
 <style scoped>

@@ -86,9 +86,8 @@ const data2 = [{
 </style>
 <style scoped>
 .x-body {
-  padding: 20px;
   /*background-color: #f5f5f5;*/
-  overflow: auto;
+
 }
 
 .x-admin-carousel > [carousel-item] > * {
