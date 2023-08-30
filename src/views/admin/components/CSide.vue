@@ -1,11 +1,8 @@
 <!--suppress VueUnrecognizedSlot -->
 <script setup>
-import {computed, ref, watch} from "vue";
+import {ref} from "vue";
 
-const icon = {
-  more_unfold: "xe6a6;",//展开的
-  more: "xe697;",//
-}
+
 import staticNavList from "/src/router/nav-list.js";
 
 const initData = () => {
@@ -27,47 +24,51 @@ const initData = () => {
 const navList = ref(initData());
 
 
-import {useRouter} from 'vue-router'
-
-const router = useRouter()
-const go = obj => {
-  if (obj.to) {
-    router.push(obj.to)
-  }
-}
-const collapseValue = ref(false);
-const collapse = computed({
-  get: () => collapseValue.value,
-  set(value) {
-    collapseValue.value = value
-  }
-});
+const collapse = ref(false);
 const switchCollapse = () => collapse.value = !(collapse.value)
-defineExpose({
-  collapse,
-  go,
-  switchCollapse
-})
+import {useRouter,useRoute} from 'vue-router'
+const router = useRouter()
+const go = menu => {
+  if (menu.to)
+    router.push(`/admin/${menu.to}`)
+  // else if(menu.href)
+  else
+    return false
+}
+const changeSelectedKey=Select=> {
+  console.log(Select)
+  return Select;
+}
 
-const openKeys2 = ref(["2"])
-const selectedKey = ref(null)
-const changeSelectedKey = (val) => {
-  selectedKey.value = val;
-}
-const changeOpenKeys = (val) => {
-  console.log(val)
-  openKeys2.value = val;
-}
+const routes= useRoute()
+// console.log(routes.path)
+const queryRoute = query => {
+  for (const e of navList.value)
+    if (e.to && `/admin/${e.to}` === query) return e.key
+  else if (e.subMenu)
+    for (const c of e.subMenu)
+      if (c.to && `/admin/${c.to}` === query) return c.key
+  return -1
+};
+const selectedKey = ref(queryRoute(routes.path))
+
+const openKeys = ref([])
+defineExpose({collapse,switchCollapse})
 </script>
+
 <template>
+
   <div class="c-side">
     <lay-menu class="menu"
-              :selected-key="selectedKey" @change-selected-Key="changeSelectedKey"
-              v-model:openKeys="openKeys2" @change-open-keys="changeOpenKeys"
+              v-model:selected-key="selectedKey"
+              v-model:open-keys="openKeys"
+              @changeSelectedKey="changeSelectedKey"
               :collapse="collapse"
-              :tree="true"
-    >
-      <div class="logo" @click="router.push('/')">
+              :tree="true">
+      <div style="color:white">
+
+      </div>
+      <div class="logo" @click="router.push('/')" >
         <img src="/src/assets/vue.svg" alt="logo"/>
         <span>LayUI-Vue-Admin</span>
       </div>
@@ -85,7 +86,7 @@ const changeOpenKeys = (val) => {
             {{ menu.name }}
           </lay-menu-item>
         </lay-sub-menu>
-        <lay-menu-item  v-else @click="go(nav)">
+        <lay-menu-item :id="nav.key" @click="go(nav)" v-else>
           <template #title>{{ nav.name }}</template>
           <template #icon>
             <i class="iconfont" v-html='"&#"+nav.icon'></i>

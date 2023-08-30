@@ -6,12 +6,13 @@ import MemberList from '../views/admin/page/MemberList.vue'
 import Test from '../test/Test.vue'
 import FormTemplate from "../views/admin/page/FormTemplate.vue";
 const routes = [
+  {path: "/",redirect:"admin"},
   {
-    path: '/',
-    name: 'home',
+    path: '/admin',
+    name: 'admin',
     component: Home,
     children:[
-      {path:"/",component:Welcome},
+      {path:"",name:"welcome",component:Welcome},
       {path:"member-list",component:MemberList},
       {path:"form-template",component:FormTemplate},
     ]
