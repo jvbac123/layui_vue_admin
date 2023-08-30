@@ -6,8 +6,7 @@
   <router-view/>
 </template>
 <style>
-  html,body{
-
+  html,body,#app{
     margin: 0;
     padding: 0;
   }

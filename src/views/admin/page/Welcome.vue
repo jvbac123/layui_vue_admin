@@ -27,8 +27,8 @@ const data2 = [{
   ]
 },
   {name: "开发团队",children: [
-      {key: "版权所有",value: "xuebingsi"},
-      {key: "开发者",value: "马志斌(113664000@qq.com)"},
+      {key: "版权所有",value: "a"},
+      {key: "开发者",value: "ss"},
     ]}
 ]
 
@@ -52,22 +52,6 @@ const data2 = [{
         </LayCard>
       </lay-col>
     </LayField>
-    <LayField title="系统通知">
-      <table class="layui-table" lay-skin="line">
-        <tbody>
-        <tr>
-          <td>
-            <a class="x-a" href="/" target="_blank">新版x-admin 2.0上线了</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a class="x-a" href="/" target="_blank">交流qq群:(519492808)</a>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </LayField>
     <LayField v-for="table of data2" :title="table.name">
       <table class="layui-table">
         <tbody>
@@ -78,7 +62,7 @@ const data2 = [{
         </tbody>
       </table>
     </LayField>
-    <LayQuote>感谢layui,百度Echarts,jquery,本系统由x-admin提供技术支持。</LayQuote>
+    <LayQuote>结束</LayQuote>
   </div>
 </template>
 <style>

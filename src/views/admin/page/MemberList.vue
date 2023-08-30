@@ -57,7 +57,7 @@ import {
 } from '@layui/layui-vue'
 
 import {ref} from "vue";
-import PopupBox from "../components/PopupBox.vue";
+import PopupBox from "../../../components/PopupBox.vue";
 const data=ref({
   startTime:null,
   endTime:null,

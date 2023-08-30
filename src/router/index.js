@@ -1,8 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Welcome from '../views/Welcome.vue'
-import MemberList from '../views/MemberList.vue'
-import Test2 from '../views/MyCom.vue'
+import Home from '../views/admin/Home.vue'
+import Welcome from '../views/admin/page/Welcome.vue'
+import MemberList from '../views/admin/page/MemberList.vue'
+
+import Test from '../test/Test.vue'
 
 
 const routes = [
@@ -15,7 +16,7 @@ const routes = [
       {path:"member-list",component:MemberList},
     ]
   },
-  {path:"/ms",name: "test",component:Test2},
+  {path:"/test",name: "test",component:Test},
 ]
 
 const router = createRouter({
