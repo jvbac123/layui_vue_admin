@@ -32,18 +32,30 @@ const mt = (refs) => {
   </div>
 </template>
 <style>
+/*
+right-content 右视图
+ header 头部 高 x
+ c-body 主体 高度为 屏幕高度 - x
+  c-content 主体内容
+    view 具体组件
 
+*/
+.main .right-content{
+  width: 100%;
+}
 .main .c-body {
   background-color: #f2f2f2;
-  padding: 15px;
+
   overflow: auto;
 }
-.main .c-content {
-  background-color: #fff;
-
+.c-body{
+  height: calc( 100vh - 60px ) ;
 }
-
-
+.main .c-content {
+  height: 100%;
+  background-color: #fff;
+  margin: 15px;
+}
 .main .layui-side {
 //flex: initial !important; //width: initial !important;
 }

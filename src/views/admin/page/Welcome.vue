@@ -60,6 +60,7 @@ const data2 = [{
           <td>{{ td.value }}</td>
         </tr>
         </tbody>
+
       </table>
     </LayField>
     <LayQuote>结束</LayQuote>
