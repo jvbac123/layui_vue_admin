@@ -53,7 +53,7 @@ right-content 右视图
 }
 .main .c-content {
   height: 100%;
-  background-color: #fff;
+  background-color: #f6f6f6;
   margin: 15px;
 }
 .main .layui-side {

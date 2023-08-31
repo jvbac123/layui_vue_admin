@@ -39,18 +39,19 @@ const data2 = [{
       <span class="x-red">test</span>！当前时间: {{new Date()}}
     </LayQuote>
     <LayField title="数据统计">
-      <lay-col md="24">
-        <LayCard>
-          <lay-row class="x-admin-backlog" space="10">
-            <lay-col v-for="col of data1" md="4" xs="2">
-              <a href="#" class="x-admin-backlog-body">
-                <h3>{{ col.title }}</h3>
-                <p><cite>{{ col.info }}</cite></p>
-              </a>
-            </lay-col>
-          </lay-row>
-        </LayCard>
-      </lay-col>
+      <lay-card>
+      <lay-row space="10" >
+          <lay-col class="x-admin-backlog"
+              md="4" sm="12" xs="24"
+              v-for="col of data1"
+              >
+            <a href="#" class="x-admin-backlog-body">
+              <h3>{{ col.title }}</h3>
+              <p><cite>{{ col.info }}</cite></p>
+            </a>
+          </lay-col>
+        </lay-row>
+      </lay-card>
     </LayField>
     <LayField v-for="table of data2" :title="table.name">
       <table class="layui-table">

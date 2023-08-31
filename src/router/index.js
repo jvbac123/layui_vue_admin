@@ -1,27 +1,27 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import {createRouter, createWebHashHistory} from 'vue-router'
 import Home from '../views/admin/Home.vue'
-import Welcome from '../views/admin/page/Welcome.vue'
-import MemberList from '../views/admin/page/MemberList.vue'
 
 import Test from '../test/Test.vue'
-import FormTemplate from "../views/admin/page/FormTemplate.vue";
+
 const routes = [
-  {path: "/",redirect:"admin"},
-  {
-    path: '/admin',
-    name: 'admin',
-    component: Home,
-    children:[
-      {path:"",name:"welcome",component:Welcome},
-      {path:"member-list",component:MemberList},
-      {path:"form-template",component:FormTemplate},
-    ]
-  },
-  {path:"/test",name: "test",component:Test},
+    {path: "/", redirect: "/admin"},
+    {
+        path: '/admin',
+        name: 'admin',
+        component: Home,
+        redirect: "/admin/welcome",
+        children: [
+            {path: "welcome", name: "Welcome", component: () => import("../views/admin/page/Welcome.vue")},
+            {path: "welcome-1", name: "Welcome1", component: () => import("../views/admin/page/Welcome1.vue")},
+            {path: "member-list", component: () => import("../views/admin/page/MemberList.vue")},
+            {path: "form-template", component: () => import("../views/admin/page/FormTemplate.vue")},
+        ]
+    },
+    {path: "/test", name: "test", component: Test},
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes
+    history: createWebHashHistory(),
+    routes
 })
 export default router

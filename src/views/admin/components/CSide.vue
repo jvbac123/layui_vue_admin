@@ -23,8 +23,8 @@ const initData = () => {
 };
 const navList = ref(initData());
 
-
-const collapse = ref(false);
+console.debug(window.innerWidth)//768
+const collapse = ref(window.innerWidth <= 920);
 const switchCollapse = () => collapse.value = !(collapse.value)
 import {useRouter,useRoute} from 'vue-router'
 const router = useRouter()
@@ -36,7 +36,7 @@ const go = menu => {
     return false
 }
 const changeSelectedKey=Select=> {
-  console.log(Select)
+  // console.log(Select)
   return Select;
 }
 
@@ -65,9 +65,7 @@ defineExpose({collapse,switchCollapse})
               @changeSelectedKey="changeSelectedKey"
               :collapse="collapse"
               :tree="true">
-      <div style="color:white">
 
-      </div>
       <div class="logo" @click="router.push('/')" >
         <img src="/src/assets/vue.svg" alt="logo"/>
         <span>LayUI-Vue-Admin</span>

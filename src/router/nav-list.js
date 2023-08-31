@@ -1,6 +1,12 @@
 let navList = [
+    {name: "欢迎页-1",icon: "xe6b8",to:"welcome"},
+    {name: "欢迎页-2",icon: "xe6b8",to:"welcome-1"},
+    {
+        name: "图标字体", icon: "xe6b4", subMenu: [
+            {name: "图标对应字体", href: "unicode.html"}
+        ]
+    },
     {name: "表单验证",icon: "xe6b8",to:"form-template"},
-
     {
         name: "会员管理", icon: "xe6b8", subMenu: [
             {name: "会员列表", to: "member-list"},
@@ -35,11 +41,6 @@ let navList = [
             {name: "k线图", href: "echarts6.html"},
             {name: "热力图", href: "echarts7.html"},
             {name: "仪表图", href: "echarts8.html"},
-        ]
-    },
-    {
-        name: "图标字体", icon: "xe6b4", subMenu: [
-            {name: "图标对应字体", href: "unicode.html"}
         ]
     },
 ];
