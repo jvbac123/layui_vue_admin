@@ -17,7 +17,7 @@ const submit=function (){
 <template>
   <div class="n-body">
     <lay-field title="表单验证">
-      <lay-form :model="formData" ref="form" required pane >
+      <lay-form :model="formData" ref="form" required  >
         <lay-form-item label="输入框" prop="input">
           <lay-input v-model="formData.input"/>
         </lay-form-item>

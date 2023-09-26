@@ -7,9 +7,11 @@ let navList = [
         ]
     },
     {name: "表单验证",icon: "xe6b8",to:"form-template"},
-    {
+    {name: "会员列表",icon: "xe6b8",to: "member-list"},
+
+/*    {
         name: "会员管理", icon: "xe6b8", subMenu: [
-            {name: "会员列表", to: "member-list"},
+
             {name: "会员列表", href: "member-del.html"},
             {
                 name: "会员管理", icon: "xe70b", subMenu: [
@@ -42,6 +44,6 @@ let navList = [
             {name: "热力图", href: "echarts7.html"},
             {name: "仪表图", href: "echarts8.html"},
         ]
-    },
+    },*/
 ];
 export default navList;
